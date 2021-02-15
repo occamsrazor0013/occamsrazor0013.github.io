@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Learn React!</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://kit.fontawesome.com/bfc9f9516a.js" crossorigin="anonymous"></script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>React Tutorial</h1>
+						<p>Grasp the main concepts of React with this quick tutorial!</p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<span class="image main"><img src="images/logo.svg" class="App-logo" alt="react-logo" /></span>
+								<header class="major">
+									<h2>What is React?</h2>
+								</header>
+								<p>React is a front-end open source Javascript Library used for building user interfaces and interactive UIs. 
+									It is maintained by Facebook and has over a thousand contributers.
+									React uses the concept of state and rendering of that state onto the DOM to update your applications.
+									To make programming in React easier, we write in JSX(Javascript XML) to convert HTML into React elements.
+									 
+								</p>
+								<header class="major">
+									<h2>Framework vs Library</h2>
+								</header>
+								<p>As you have probably noticed above, React is a Javascript library. 
+									So what is the difference between a library and framework?
+									A library is a collection of methods and functions. 
+									A framework is a predefined skeleton with features which can be filled out with your code to create an application. 
+									Frameworks contain libraries.
+									The key difference is the control in the code that you write. 
+									When implementing a library, your code calls upon the library for a method and you are in control. 
+									With a framework, it calls your code and it is in control. Angular and Vue are examples of frameworks.
+								</p>
+								<header class="major">
+									<h2>Components</h2>
+								</header>
+								<p>Components are what your React code will be composed of. They are reusable pieces of code which form your UI. 
+									There are two types of components in React, functional components and class components. An example of a functional 
+									component is shown below, first with an arrow function and the second without.
+									<img class="centerImages" src="images/FunctionalComponent.png" />
+									A functional component is a function that returns some JSX code. On the other hand, a class component extends 
+									React.Component which has a render method. The JSX to be rendered will be inside this render method.
+									<img class="centerImages" src="images/ClassComponent.png" />
+								</p>
+								<header class="major">
+									<h2>Composition</h2>
+								</header>
+								<p>In React, composition is used rather than inheritance. Inheritance allows you to inherit from a superclass 
+									onto a subclass. Composition is when your parent component is composed up of parts, or child components. 
+									The bulk of a front end application is usually composed of many parts rather than inheriting from a superclass. 
+									You can think about child components as a specialized version of the parent component.
+									<img class="centerImages" src="images/Composition.png" />
+									In the example given above, the ChildComponent recieves props from the ParentComponent. In this case, it is the messaage prop. 
+									The ParentComponent then calls the ChildComponent which has returned the message prop inside a h1 tag. This is a very simple 
+									example of a composition in React.
+								</p>
+								<header class="major">
+									<h2>Props</h2>
+								</header>
+								<p>Props, or properties are used for passing data along components. An example was given in the composition section. 
+									<img class="centerImages" src="images/PropsFC.png" />
+									A regular function, an arrow function and an arrow function with destructuring are shown passing props then returning those props in some way. 
+									<img class="centerImages" src="images/PropsCC.png" />
+									Because it is a class, and not a function, we must use the this keyword to refer to the props. The example above is shown in destructuring syntax. 
+								</p>
+								<header class="major">
+									<h2>State</h2>
+								</header>
+								<p>All components in React have a state object built in. Everytime the component's state changes, the component re-renders. 
+									You can store all properties of a function into the state object. 
+									<img class="centerImages" src="images/State.png" />
+									In any component, the base constructor method is always called first. 
+									Any initial states should be set up here. State must be passed as props onto the base constructor of the class. 
+									You should always call super(props) to allow the component to inherit methods from the parent React.Component. 
+									Initial states can be updated by using the setState() method.
+									<img class="centerImages" src="images/setState.png" />
+									There are two main concepts when using setState().
+									<br/><i class="fas fa-chevron-right" id="iconOne"></i> You must use the setState() method to update state.
+									<img class="centerImages" src="images/setState1.png" />
+									Modifying the state directly will not re-render the component. You may only assign this.state in the base constructor.
+									<br/><i class="fas fa-chevron-right" id="iconTwo"></i> Multiple setState() methods are grouped into a single update for better performance.
+									<img class="centerImages" src="images/setState2.png" />
+									If you were to call the incorrect setState() method multiple times, React would batch all those calls into one update, which would not output the intended answer. 
+									Because this.props or this.state may be updated asynchronously, you should not depend on them as previous states to update the current state of your component. 
+									Instead of accepting an object with setState(), use the correct form that accepts a function as shown above. 
+									We do not use the current this.state to keep track of previous state but instead pass a previous state function parameter.
+								</p>
+								<header class="major">
+									<h2>LifeCycle</h2>
+								</header>
+								<p>All components in React have a lifecycle built in as well. The lifecycle consists of three main phases: mounting, updating and unmounting. 
+									<br/><i class="fas fa-chevron-right" id="iconOne"></i> Mounting is putting elements onto the DOM.
+									<br/><i class="fas fa-chevron-right" id="iconTwo"></i> Updating is reflecting any changes of a component's state or props onto the DOM.
+									<br/><i class="fas fa-chevron-right" id="iconThree"></i> Unmounting is removing the component from the DOM.
+									<br/>Although there are many lifecycle methods, the three relevant ones are 
+									componentDidMount, componentDidUpdate, and componentWillUnmount, one for each respective phase.
+									<br/><i class="fas fa-chevron-right" id="iconOne"></i> componentDidMount is called after the component is rendered onto the DOM.
+									<img class="centerImages" src="images/componentDidMount.png">
+									After the LifeCycleExample component is rendered onto the DOM, state of the greeting property is updated after 1 second.
+									<br/><i class="fas fa-chevron-right" id="iconTwo"></i> componentDidUpdate is called after the component is updated onto the DOM.
+									<img class="centerImages" src="images/componentDidUpdate.png">
+									After the LifeCycleExample component is updated onto the DOM, if the states did update, a sentence is logged onto the console.
+									<br/><i class="fas fa-chevron-right" id="iconThree"></i> componentWillUnmount is called before the component is removed from the DOM.
+									<img class="centerImages" src="images/componentWillUnmount.png">
+									Before the LifeCycleExample component is unmounted, state of the greeting property is updated. 
+								</p>
+								<header class="major">
+									<h2>Handling Events</h2>
+								</header>
+								<p>React has the same event handlers as HTML. Common HTML events include onChange, onClick, onMouseOver, onMouseOut, onKeyDown, and onLoad. 
+									If you use regular functions to express how to handle an event, you must bind it to the component using the this keyword and bind() method. 
+									<img class="centerImages" src="images/EventHandlingNoArrow.png">
+									You should use arrow functions, as the this keyword always represents the object that defined the arrow function.
+									<img class="centerImages" src="images/EventHandlingArrow.png">
+									Please note the differences between using a regular function and an arrow function that are called during an event handler.
+									In both examples, there is a button with the Blast Off! button. When the button is clicked, an alert pops up with the message, "To the Moon!".
+								</p>
+								<header class="major">
+									<h2>Lists, Keys and Mapping</h2>
+								</header>
+								<p>
+									When rendering a list, you should use the map() method and include a key for each list item.
+									<img class="centerImages" src="images/Lists.png">
+									In the example above, the function MappedList takes in array of numbers. That array is then mapped onto a list for each number in the array. 
+									The resulting list is then returned. Because there is no key for the list items, there will be a warning in in the console. 
+									Keys are a string attribute that are used to give each item inside the list an identity. 
+									It helps React identify what needs to be added, changed and removed.
+									<img class="centerImages" src="images/Keys.png">
+									In the edited MappedList function, each number has the key of their respective number converted into a string. 
+									Keys are unique and should differ among the siblings of the data. You would usually use the ID's of the data as the key. 
+									If there is no ID for the items, you can use the index as the key.
+								</p>
+								<header class="major">
+									<h2>Hooks</h2>
+								</header>
+								<p>Hooks were a new feature in the React 16.8 update. Prior to this update, you could only use state and its' features when writing a class. 
+									Hooks allow you to "hook" onto functions which allow the use of state and lifecycle methods.
+									<img class="centerImages" src="images/Hooks1.png">
+									In the example above, useState is the state hook. It returns a pair in brackets; the current state value and the function that allows you to update it. In the pair, count is equivalent 
+									to this.state.count and setCount is equivalent to this.setState. You can then refer to the function from a event handler. The argument in useState sets the initial value of the state. 
+									You can use the useState method many times in a component. However, they should only be at the top level of the component. 
+									</p>
+								<header class="major">
+									<h2>The Effect Hook</h2>
+								</header>
+								<p>The effect hook is the counterpart to the state hook. It allows you to use lifecycle methods or "effects", hence the name "effect hook". 
+									You may think of the effect hook as a a combination of the following lifecycle methods: componentDidMount, componentDidUpdate, and componentWillUnmount. 
+									<img class="centerImages" src="images/Hooks2.png">
+									When you use this hook, React knows that it still needs to do something after the render. In the example, it just sets the document title but you can use it to fetch data or call an API.
+									The effect hook runs after the first render and every update. Because there is a lot to digest, I suggest heading over to the <a style="color: #4895ef"href="https://reactjs.org/docs/hooks-effect.html">React website</a> and reviewing their documentation on the Effect Hook.
+								<header class="major">
+									<h2>Summary</h2>
+								</header>
+								<p>Well, you made it to the end of this tutorial! This is in no way meant to make you a genius at React after reading it but just a quick beginner tutorial if you know nothing about React. 
+									In the end, the best way to learn how to code is to actually code. It is impossible to memorize eveyrthing since there are updates every now and then. I wish you the best luck on your coding adventures. 
+									Thank you for visiting my website!
+								</p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<ul class="actions">
+								<li><a href="index.html" class="button">Back to Website</a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy; David Chan 2021</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
